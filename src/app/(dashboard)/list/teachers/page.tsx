@@ -2,6 +2,7 @@
 // import Pagination from "@/components/Pagination";
 // import Table from "@/components/Table";
 import Pagination from "@/components/Pagination";
+import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
 import { role, teachersData } from "@/lib/data";
 import Image from "next/image";
@@ -86,12 +87,11 @@ const TeacherListPage = () => {
               <Image src="/view.png" alt="" width={16} height={16} />
             </button>
           </Link>
-          {/* {role === "admin" && (
-            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-            //   <Image src="/delete.png" alt="" width={16} height={16} />
-            // </button>
-            // <FormModal table="teacher" type="delete" id={item.id}/>
-          )} */}
+          {role === "admin" && (
+            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+              <Image src="/delete.png" alt="" width={16} height={16} /> 
+             </button>
+          )}
         </div>
       </td>
     </tr>
@@ -121,9 +121,11 @@ const TeacherListPage = () => {
         </div>
       </div>
       {/* LIST */}
+      <Table columns={columns}  renderRow={renderRow} data={teachersData}/>
       {/* <Table columns={columns} renderRow={renderRow} data={teachersData} /> */}
       {/* PAGINATION */}
       <Pagination />
+
     </div>
   );
 };
