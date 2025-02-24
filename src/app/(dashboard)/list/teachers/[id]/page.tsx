@@ -1,5 +1,6 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar"; 
+import Performance from "@/components/Performance";
 // import FormModal from "@/components/FormModal";
 // import Performance from "@/components/Performance";
 import { role } from "@/lib/data";
@@ -157,7 +158,7 @@ const SingleTeacherPage = () => {
             </Link>
           </div>
         </div>
-        {/* <Performance /> */}
+        <Performance />
         <Announcements />
       </div>
     </div>
